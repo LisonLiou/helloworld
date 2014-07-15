@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">helloworld</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="other_app_name">The New Activity</string>
+    <string name="exit">退出</string>
+    <string name="about">关于</string>
+    <string name="dialog_app_name">DIALOG</string>
+	<string name="listview_activity_title">This is listview activity</string>
+	<string name="sqlite_activity_title">Sqlite demo</string>
+</resources>
