@@ -1,31 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="horizontal" >
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
 
     <TextView
         android:id="@+id/textViewId"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="1111" />
+        android:layout_weight="1"
+        android:text="First" />
 
     <TextView
         android:id="@+id/textViewDeviceIp"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="2222" />
+        android:layout_weight="1"
+        android:text="First" />
 
     <TextView
         android:id="@+id/textViewDeviceName"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="3333" />
+        android:layout_weight="1"
+        android:text="First" />
 
     <TextView
         android:id="@+id/textViewCreateTime"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="4444" />
+        android:layout_weight="1"
+        android:text="First" />
 
 </LinearLayout>
