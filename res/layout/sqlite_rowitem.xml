@@ -5,28 +5,28 @@
 
     <TextView
         android:id="@+id/textViewId"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="First" />
 
     <TextView
         android:id="@+id/textViewDeviceIp"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="First" />
 
     <TextView
         android:id="@+id/textViewDeviceName"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="First" />
 
     <TextView
         android:id="@+id/textViewCreateTime"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="First" />

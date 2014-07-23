@@ -991,6 +991,7 @@ containing a value of this type.
         public static final int beginning=0x7f050011;
         public static final int btnCalculate=0x7f050049;
         public static final int btnCreateDatabase=0x7f050059;
+        public static final int btnDelete=0x7f05005e;
         public static final int btnDialog=0x7f050050;
         public static final int btnHandler=0x7f05003d;
         public static final int btnInsert=0x7f050044;
@@ -1060,10 +1061,10 @@ containing a value of this type.
         public static final int textView2=0x7f050043;
         public static final int textView3=0x7f050045;
         public static final int textView4=0x7f050046;
-        public static final int textViewCreateTime=0x7f050061;
-        public static final int textViewDeviceIp=0x7f05005f;
-        public static final int textViewDeviceName=0x7f050060;
-        public static final int textViewId=0x7f05005e;
+        public static final int textViewCreateTime=0x7f050062;
+        public static final int textViewDeviceIp=0x7f050060;
+        public static final int textViewDeviceName=0x7f050061;
+        public static final int textViewId=0x7f05005f;
         public static final int textViewName=0x7f050057;
         public static final int textViewProgress=0x7f050053;
         public static final int textview1=0x7f05003f;
