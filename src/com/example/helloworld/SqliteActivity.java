@@ -37,12 +37,15 @@ public class SqliteActivity extends Activity {
 	
 	DatabaseHelper helper;
 	SQLiteDatabase db;
-
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		super.setContentView(R.layout.sqlite);
+		
+		//ContentResolver resolver=super.getContentResolver();
+		
 		
 		helper=new DatabaseHelper(SqliteActivity.this, "helloworld.db");
 		db= helper.getReadableDatabase();
