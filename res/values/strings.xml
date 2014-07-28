@@ -9,4 +9,5 @@
     <string name="dialog_app_name">DIALOG</string>
 	<string name="listview_activity_title">This is listview activity</string>
 	<string name="sqlite_activity_title">Sqlite demo</string>
+	<string name="sax_activity_title">SAX Demo</string>
 </resources>

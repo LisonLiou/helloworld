@@ -7,6 +7,8 @@
     <uses-sdk
         android:minSdkVersion="10"
         android:targetSdkVersion="19" />
+    
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -38,6 +40,11 @@
         <activity
             android:name="com.example.helloworld.SqliteActivity"
             android:label="@string/sqlite_activity_title">
+        </activity>
+        <activity 
+            android:name="com.example.helloworld.SaxActivity"
+            android:label="@string/sax_activity_title">
+            
         </activity>
     </application>
 
