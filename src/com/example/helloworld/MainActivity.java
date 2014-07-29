@@ -43,7 +43,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		button1 = (Button) super.findViewById(R.id.btnHandler);
 		button1.setOnClickListener(this);
 
-		button2 = (Button) super.findViewById(R.id.button2);
+		button2 = (Button) super.findViewById(R.id.btnUnregisterReceiver);
 		button2.setOnClickListener(this);
 
 		button3 = (Button) super.findViewById(R.id.btnInsert);
@@ -147,7 +147,7 @@ public class MainActivity extends Activity implements OnClickListener {
 			dialog1.setNegativeButton("确定", null);
 			dialog1.show();
 			break;
-		case R.id.button2:
+		case R.id.btnUnregisterReceiver:
 			Toast.makeText(MainActivity.this, "你点击了Button2", Toast.LENGTH_SHORT)
 					.show();
 			break;

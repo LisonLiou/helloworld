@@ -28,4 +28,22 @@
 	    android:layout_height="wrap_content"
 	    android:text="HANDLER" />
 
+	<Button
+	    android:id="@+id/btnBroadCastReceiver"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="BroadCast Receiver" />
+
+	<Button
+	    android:id="@+id/btnRegisterReceiver"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="Register Broadcast Receiver" />
+
+	<Button
+	    android:id="@+id/btnUnregisterReceiver"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="UnRegister Broadcast Receiver" />
+
 </LinearLayout>
