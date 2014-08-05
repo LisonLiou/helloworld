@@ -46,4 +46,30 @@
 	    android:layout_height="wrap_content"
 	    android:text="UnRegister Broadcast Receiver" />
 
+	<Button
+	    android:id="@+id/btnStartWifi"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="StartWIFI" />
+
+	<Button
+	    android:id="@+id/btnStopWifi"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="StopWifi" />
+
+	<Button
+	    android:id="@+id/btnCheckWifiState"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="CheckWifiState" />
+	
+	<Button
+	    android:id="@+id/btnShowWifiList"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="ShowWifiList" />
+	    
+	    
+
 </LinearLayout>

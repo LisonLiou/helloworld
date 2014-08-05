@@ -1,8 +1,13 @@
 package com.example.helloworld;
 
+import java.util.List;
+
 import android.app.Activity;
+import android.app.Service;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.net.wifi.WifiConfiguration;
+import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.HandlerThread;
@@ -20,7 +25,9 @@ public class OtherActivity extends Activity {
 
 	private TextView textview1;
 	private ProgressBar progressBar1;
-	private Button btnProgressSwitcher, btnHandler, btnBroadCastReceiver,btnRegisterBroadcastReceiver,btnUnregisterBroadcastReceiver;
+	private Button btnProgressSwitcher, btnHandler, btnBroadCastReceiver, btnRegisterBroadcastReceiver, btnUnregisterBroadcastReceiver, btnStartWifi,
+			btnStopWifi, btnCheckWifiState, btnShowWifiList;
+	private WifiManager wifiManager = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +42,7 @@ public class OtherActivity extends Activity {
 		textview1.setText(R.string.other_app_name);
 
 		progressBar1 = (ProgressBar) super.findViewById(R.id.progressBar1);
-		btnProgressSwitcher = (Button) super
-				.findViewById(R.id.btnProgressSwitcher);
+		btnProgressSwitcher = (Button) super.findViewById(R.id.btnProgressSwitcher);
 		btnProgressSwitcher.setOnClickListener(new onclickListener());
 
 		progressBar1.setMax(200);
@@ -47,15 +53,28 @@ public class OtherActivity extends Activity {
 		btnHandler = (Button) super.findViewById(R.id.btnHandler);
 		btnHandler.setOnClickListener(new onclickListener());
 
-		btnBroadCastReceiver = (Button) super
-				.findViewById(R.id.btnBroadCastReceiver);
+		btnBroadCastReceiver = (Button) super.findViewById(R.id.btnBroadCastReceiver);
 		btnBroadCastReceiver.setOnClickListener(new onclickListener());
-		
-		btnRegisterBroadcastReceiver=(Button)super.findViewById(R.id.btnRegisterReceiver);
+
+		btnRegisterBroadcastReceiver = (Button) super.findViewById(R.id.btnRegisterReceiver);
 		btnRegisterBroadcastReceiver.setOnClickListener(new onclickListener());
-		
-		btnUnregisterBroadcastReceiver=(Button)super.findViewById(R.id.btnUnregisterReceiver);
+
+		btnUnregisterBroadcastReceiver = (Button) super.findViewById(R.id.btnUnregisterReceiver);
 		btnUnregisterBroadcastReceiver.setOnClickListener(new onclickListener());
+
+		btnStartWifi = (Button) super.findViewById(R.id.btnStartWifi);
+		btnStartWifi.setOnClickListener(new onclickListener());
+
+		btnStopWifi = (Button) super.findViewById(R.id.btnStopWifi);
+		btnStopWifi.setOnClickListener(new onclickListener());
+
+		btnCheckWifiState = (Button) super.findViewById(R.id.btnCheckWifiState);
+		btnCheckWifiState.setOnClickListener(new onclickListener());
+
+		btnShowWifiList = (Button) super.findViewById(R.id.btnShowWifiList);
+		btnShowWifiList.setOnClickListener(new onclickListener());
+
+		wifiManager = (WifiManager) this.getSystemService(Service.WIFI_SERVICE);
 	}
 
 	class onclickListener implements OnClickListener {
@@ -87,12 +106,10 @@ public class OtherActivity extends Activity {
 
 				break;
 			case R.id.btnHandler:
-				HandlerThread handlerThread = new HandlerThread(
-						"handler_thread");
+				HandlerThread handlerThread = new HandlerThread("handler_thread");
 				handlerThread.start();
 
-				HandlerMine myHandler = new HandlerMine(
-						handlerThread.getLooper());
+				HandlerMine myHandler = new HandlerMine(handlerThread.getLooper());
 				Message m = myHandler.obtainMessage();
 
 				Bundle bdl = new Bundle();
@@ -103,29 +120,41 @@ public class OtherActivity extends Activity {
 
 				m.sendToTarget();
 
-				Log.i("Handler Thread-->",
-						String.valueOf(Thread.currentThread().getId()));
+				Log.i("Handler Thread-->", String.valueOf(Thread.currentThread().getId()));
 
 				break;
 			case R.id.btnBroadCastReceiver:
 
 				Intent i = new Intent();
-				//与ACTION_EDIT对应的常量值为：android.intent.action.EDIT
-				//因此需要在AndroidManifest.xml的receiver的action中进行配置
+				// 与ACTION_EDIT对应的常量值为：android.intent.action.EDIT
+				// 因此需要在AndroidManifest.xml的receiver的action中进行配置
 				i.setAction(Intent.ACTION_EDIT);
-				OtherActivity.this.sendBroadcast(i);				
+				OtherActivity.this.sendBroadcast(i);
 				break;
-				
+
 			case R.id.btnRegisterReceiver:
-				
-				IntentFilter filter=new IntentFilter();
+
+				IntentFilter filter = new IntentFilter();
 				filter.addAction("android.provider.Telephony.SMS_RECEIVED");
-				
+
 				OtherActivity.this.registerReceiver(new MyBroadCastReceiver(), filter);
 				break;
 			case R.id.btnUnregisterReceiver:
-				
 				OtherActivity.this.unregisterReceiver(new MyBroadCastReceiver());
+				break;
+			case R.id.btnStartWifi:
+				wifiManager.setWifiEnabled(true);
+				break;
+			case R.id.btnStopWifi:
+				wifiManager.setWifiEnabled(false);
+				break;
+			case R.id.btnCheckWifiState:
+				String state = String.valueOf(wifiManager.getWifiState());
+				Toast.makeText(OtherActivity.this, state, Toast.LENGTH_SHORT).show();
+				break;
+			case R.id.btnShowWifiList:
+				List<WifiConfiguration> wifiList = wifiManager.getConfiguredNetworks();
+
 				break;
 			}
 		}
@@ -142,8 +171,7 @@ public class OtherActivity extends Activity {
 			Log.i("Bundle Message-->", String.valueOf(bdl.getInt("bint")));
 			Log.i("Bundle Message-->", bdl.getString("bstring"));
 
-			Log.i("Handler Message-->",
-					String.valueOf(Thread.currentThread().getId()));
+			Log.i("Handler Message-->", String.valueOf(Thread.currentThread().getId()));
 		}
 	}
 

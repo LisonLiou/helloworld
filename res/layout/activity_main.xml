@@ -243,4 +243,12 @@
         android:layout_toRightOf="@+id/btnListView"
         android:text="XML" />
 
+    <Button
+        android:id="@+id/btnGpsActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btnListView"
+        android:layout_below="@+id/btnListView"
+        android:text="GPS" />
+
 </RelativeLayout>

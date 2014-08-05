@@ -11,6 +11,14 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
     <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.LOCATION_HARDWARE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    
 
     <application
         android:allowBackup="true"
@@ -24,6 +32,7 @@
             <!-- 标识起始Activity -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -47,6 +56,11 @@
         <activity
             android:name="com.example.helloworld.SaxActivity"
             android:label="@string/sax_activity_title" >
+        </activity>
+        
+        <activity
+            android:name="com.example.helloworld.GpsActivity"
+            android:label="GPS DEMO" >
         </activity>
 
         <!-- 注册BroadcastReceiver，应用程序退出后仍可接收消息 -->

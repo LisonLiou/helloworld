@@ -23,9 +23,7 @@ import android.widget.Toast;
 
 public class MainActivity extends Activity implements OnClickListener {
 
-	private Button button1, button2, button3, btnNewActivity, btnSendMsg,
-			btnCalculate, btnDialog, btnProgress, btnListView, btnSqlite,
-			btnXml;
+	private Button button1, button2, button3, btnNewActivity, btnSendMsg, btnCalculate, btnDialog, btnProgress, btnListView, btnSqlite, btnXml, btnGpsActivity;
 	private android.app.AlertDialog.Builder dialog1, dialog2;
 	private TextView textview1, textView4, textViewProgress;
 	private EditText editText1, editText2;
@@ -67,8 +65,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		radio0 = (RadioButton) super.findViewById(R.id.radio0);
 		radio1 = (RadioButton) super.findViewById(R.id.radio1);
 
-		radioGroupGender = (RadioGroup) super
-				.findViewById(R.id.radioGroupGender);
+		radioGroupGender = (RadioGroup) super.findViewById(R.id.radioGroupGender);
 		radioGroupGender.setOnCheckedChangeListener(radioCheckedListener);
 
 		checkbox1 = (CheckBox) super.findViewById(R.id.checkBox1);
@@ -91,6 +88,9 @@ public class MainActivity extends Activity implements OnClickListener {
 
 		btnXml = (Button) super.findViewById(R.id.btnXml);
 		btnXml.setOnClickListener(this);
+
+		btnGpsActivity = (Button) super.findViewById(R.id.btnGpsActivity);
+		btnGpsActivity.setOnClickListener(this);
 	}
 
 	/*
@@ -105,11 +105,8 @@ public class MainActivity extends Activity implements OnClickListener {
 	public CompoundButton.OnCheckedChangeListener checkboxListener = new CompoundButton.OnCheckedChangeListener() {
 
 		@Override
-		public void onCheckedChanged(CompoundButton buttonView,
-				boolean isChecked) {
-			Toast.makeText(MainActivity.this,
-					buttonView.getText().toString() + isChecked,
-					Toast.LENGTH_SHORT).show();
+		public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+			Toast.makeText(MainActivity.this, buttonView.getText().toString() + isChecked, Toast.LENGTH_SHORT).show();
 		}
 	};
 
@@ -127,8 +124,7 @@ public class MainActivity extends Activity implements OnClickListener {
 				} else if (checkedId == radio1.getId()) {
 					toastMsg = "FEMALE";
 				}
-				Toast.makeText(MainActivity.this, toastMsg, Toast.LENGTH_SHORT)
-						.show();
+				Toast.makeText(MainActivity.this, toastMsg, Toast.LENGTH_SHORT).show();
 				;
 				break;
 			}
@@ -148,8 +144,7 @@ public class MainActivity extends Activity implements OnClickListener {
 			dialog1.show();
 			break;
 		case R.id.btnUnregisterReceiver:
-			Toast.makeText(MainActivity.this, "你点击了Button2", Toast.LENGTH_SHORT)
-					.show();
+			Toast.makeText(MainActivity.this, "你点击了Button2", Toast.LENGTH_SHORT).show();
 			break;
 		case R.id.btnInsert:
 			textview1 = (TextView) super.findViewById(R.id.textview1);
@@ -228,9 +223,14 @@ public class MainActivity extends Activity implements OnClickListener {
 			super.startActivity(intentSqlite);
 			break;
 		case R.id.btnXml:
-			Intent intentSax=new Intent();
+			Intent intentSax = new Intent();
 			intentSax.setClass(MainActivity.this, SaxActivity.class);
 			startActivity(intentSax);
+			break;
+		case R.id.btnGpsActivity:
+			Intent intentGps = new Intent();
+			intentGps.setClass(MainActivity.this, GpsActivity.class);
+			startActivity(intentGps);
 			break;
 		}
 	}
