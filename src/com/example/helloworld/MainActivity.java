@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Xml.Encoding;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -37,6 +38,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
 
 		button1 = (Button) super.findViewById(R.id.btnHandler);
 		button1.setOnClickListener(this);
@@ -267,7 +269,7 @@ public class MainActivity extends Activity implements OnClickListener {
 			handlerProcess.postDelayed(updateThread, 50);
 		}
 	};
-
+         
 	Runnable updateThread2 = new Runnable() {
 
 		@Override
