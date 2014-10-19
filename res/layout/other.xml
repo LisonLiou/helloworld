@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+	<TextView 
+	    android:id="@+id/textview1"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    />
+
+	<ProgressBar
+	    android:id="@+id/progressBar1"
+	    style="?android:attr/progressBarStyleHorizontal"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content" />
+
+	<Button
+	    android:id="@+id/btnProgressSwitcher"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="PROGRESS" />
+
+	<Button
+	    android:id="@+id/btnHandler"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="HANDLER" />
+
+	<Button
+	    android:id="@+id/btnBroadCastReceiver"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="BroadCast Receiver" />
+
+	<Button
+	    android:id="@+id/btnRegisterReceiver"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="Register Broadcast Receiver" />
+
+	<Button
+	    android:id="@+id/btnUnregisterReceiver"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="UnRegister Broadcast Receiver" />
+
+	<Button
+	    android:id="@+id/btnStartWifi"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="StartWIFI" />
+
+	<Button
+	    android:id="@+id/btnStopWifi"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="StopWifi" />
+
+	<Button
+	    android:id="@+id/btnCheckWifiState"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="CheckWifiState" />
+	
+	<Button
+	    android:id="@+id/btnShowWifiList"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="ShowWifiList" />
+	    
+	    
+
+</LinearLayout>
