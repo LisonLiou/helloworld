@@ -153,8 +153,15 @@ public class OtherActivity extends Activity {
 				Toast.makeText(OtherActivity.this, state, Toast.LENGTH_SHORT).show();
 				break;
 			case R.id.btnShowWifiList:
-				List<WifiConfiguration> wifiList = wifiManager.getConfiguredNetworks();
 
+				String SSIDs = "";
+				List<WifiConfiguration> wifiList = wifiManager.getConfiguredNetworks();
+				for (WifiConfiguration config : wifiList) {
+					SSIDs += config.SSID + config.status + "\r\n";
+					
+					
+				}
+				Toast.makeText(OtherActivity.this, SSIDs, Toast.LENGTH_LONG).show();
 				break;
 			}
 		}
